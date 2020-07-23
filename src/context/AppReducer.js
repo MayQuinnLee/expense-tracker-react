@@ -7,6 +7,12 @@ export default (state, action) => {
           (transaction) => transaction.id !== action.payload
         ),
       };
+    case "ADD_TRANSACTION":
+      console.log(transactions);
+      return {
+        ...state,
+        transactions: state.transactions.push(action.payload),
+      };
     default:
       return state;
   }

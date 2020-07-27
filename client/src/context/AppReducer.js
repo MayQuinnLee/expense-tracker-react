@@ -8,10 +8,9 @@ export default (state, action) => {
         ),
       };
     case "ADD_TRANSACTION":
-      console.log(transactions);
       return {
         ...state,
-        transactions: state.transactions.push(action.payload),
+        transactions: [action.payload, ...state.transactions],
       };
     default:
       return state;
